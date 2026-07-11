@@ -2,11 +2,11 @@ window.FOOTER_EN = `
     <!-- Footer CTA -->
     <section class="bg-gold text-dark py-20 md:py-32 px-6 md:px-10">
         <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <a href="contact.html" class="text-5xl md:text-[10rem] font-heading font-bold leading-none hover:text-white transition-colors duration-500 cursor-item" data-cursor="hover">LET'S TALK</a>
+            <a href="contact.html" class="text-2xl md:text-[3.5rem] font-heading font-bold leading-tight hover:text-white transition-colors duration-500 cursor-item" data-cursor="hover">BOOK YOUR FIRST FREE CONSULTATION</a>
 
             <div class="flex flex-col md:flex-row gap-6 mt-12 items-center justify-center">
                 <a href="https://wa.me/201065666431" target="_blank"
-                    class="inline-flex items-center gap-3 bg-[#25D366] text-white font-heading text-lg px-8 py-4 rounded hover:bg-[#1ebd5b] hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_20px_rgba(37,211,102,0.2)] cursor-item w-fit"
+                    class="inline-flex items-center gap-3 bg-[#050505] text-[#fcb900] hover:bg-white hover:text-black font-heading text-lg px-8 py-4 rounded transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] cursor-item w-fit"
                     data-cursor="hover">
                     <i class="fab fa-whatsapp text-2xl"></i> Chat on WhatsApp
                 </a>

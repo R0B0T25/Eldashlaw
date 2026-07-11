@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معاينة هيرو قسم الاستكشاف بالكامل - داش وشركاه</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#000000',
+                        gold: '#fcb900',
+                        light: '#f5f5f5',
+                    },
+                    fontFamily: {
+                        heading: ['Alexandria', 'Cairo', 'sans-serif'],
+                        body: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;800&family=Alexandria:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f5f5;
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Option 1: Classic Bouncing Chevron */
+        @keyframes bounce-chevron {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(10px);
+                opacity: 1;
+            }
+        }
+        .animate-bounce-chevron {
+            animation: bounce-chevron 2s infinite ease-in-out;
+        }
+
+        /* Option 2: Elegant Mouse Scroll dot */
+        @keyframes scroll-dot {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            80% {
+                transform: translateY(15px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+        .animate-scroll-dot {
+            animation: scroll-dot 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Option 3: Double Pulse Chevron */
+        @keyframes pulse-double {
+            0% {
+                opacity: 0;
+                transform: translateY(-8px) scale(0.9);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(8px) scale(1.1);
+            }
+        }
+        .animate-pulse-double-1 {
+            animation: pulse-double 2s infinite linear;
+        }
+        .animate-pulse-double-2 {
+            animation: pulse-double 2s infinite linear;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+
+<body class="bg-dark min-h-screen relative flex flex-col justify-center items-center overflow-x-hidden overflow-y-auto pt-24 md:pt-10">
+
+    <!-- Switcher Control (Fixed top menu) -->
+    <div class="fixed top-6 z-50 bg-black/60 backdrop-blur-md border border-white/10 rounded-full p-1.5 flex gap-2">
+        <button onclick="switchIndicator(1)" id="btn-1" class="px-6 py-2 rounded-full text-xs font-bold transition-all duration-300 bg-gold text-black shadow-lg">
+            الخيار الأول (السهم النابض)
+        </button>
+        <button onclick="switchIndicator(2)" id="btn-2" class="px-6 py-2 rounded-full text-xs font-bold transition-all duration-300 text-gray-400 hover:text-white">
+            الخيار الثاني (الماوس الكبسولي)
+        </button>
+        <button onclick="switchIndicator(3)" id="btn-3" class="px-6 py-2 rounded-full text-xs font-bold transition-all duration-300 text-gray-400 hover:text-white">
+            الخيار الثالث (الأسهم المتدفقة)
+        </button>
+    </div>
+
+    <!-- UAE Landmark Background Image with gradient overlays -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark/95 via-dark/45 to-dark z-10"></div>
+        <img src="dubai_landmark.png"
+            class="w-full h-full object-cover reveal-hero-img scale-100 opacity-60 filter brightness-[0.55] contrast-[1.15]"
+            alt="UAE Landmark">
+    </div>
+
+    <!-- Subtle Radial Gold Glow behind logo -->
+    <div class="absolute w-[400px] h-[400px] md:w-[800px] md:h-[800px] rounded-full bg-gold/8 blur-[120px] pointer-events-none z-10">
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 w-full max-w-4xl flex flex-col items-center text-center pt-10">
+        <!-- Center Logo with drop shadow -->
+        <div class="mb-8 select-none">
+            <img src="dash-logo.png"
+                alt="Dash & Partners Logo"
+                class="h-44 md:h-64 object-contain drop-shadow-[0_0_40px_rgba(252,185,0,0.35)] opacity-90">
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-heading tracking-[0.2em] text-white uppercase font-bold">
+            DASH &amp; PARTNERS
+        </h1>
+
+        <div class="w-20 h-[1px] bg-gold/50 my-6"></div>
+    </div>
+
+
+    <!-- ==================== SCROLL INDICATORS AT THE BOTTOM CENTER ==================== -->
+
+    <!-- Option 1: Classic Bouncing Chevron -->
+    <div id="indicator-1" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 z-30 transition-all duration-500 opacity-100 pointer-events-auto">
+        <span class="text-[9px] tracking-[0.2em] uppercase text-gray-400 mb-1 select-none">اكتشف مسيرتنا</span>
+        <div class="animate-bounce-chevron flex flex-col items-center">
+            <i class="fa-solid fa-chevron-down text-gold text-base"></i>
+            <i class="fa-solid fa-chevron-down text-gold text-xs -mt-2 opacity-50"></i>
+        </div>
+    </div>
+
+    <!-- Option 2: Elegant Mouse Scroll dot -->
+    <div id="indicator-2" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 z-30 transition-all duration-500 opacity-0 pointer-events-none translate-y-4">
+        <span class="text-[9px] tracking-[0.2em] uppercase text-gray-400 select-none">اكتشف مسيرتنا</span>
+        <div class="w-6 h-10 rounded-full border border-gold/40 flex justify-center p-1.5 bg-black/20">
+            <div class="w-1.5 h-1.5 rounded-full bg-gold animate-scroll-dot"></div>
+        </div>
+    </div>
+
+    <!-- Option 3: Double Pulse Chevron -->
+    <div id="indicator-3" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-6 z-30 transition-all duration-500 opacity-0 pointer-events-none translate-y-4">
+        <span class="text-[9px] tracking-[0.2em] uppercase text-gray-400 select-none">اكتشف مسيرتنا</span>
+        <div class="relative w-12 h-8 flex items-center justify-center">
+            <i class="fa-solid fa-chevron-down text-gold text-base absolute animate-pulse-double-1"></i>
+            <i class="fa-solid fa-chevron-down text-gold text-base absolute animate-pulse-double-2"></i>
+        </div>
+    </div>
+
+
+    <script>
+        function switchIndicator(index) {
+            // Loop through indicators and buttons to update states
+            for (let i = 1; i <= 3; i++) {
+                const indicator = document.getElementById(`indicator-${i}`);
+                const button = document.getElementById(`btn-${i}`);
+                
+                if (i === index) {
+                    // Show active indicator
+                    indicator.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    indicator.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                    
+                    // Show active button styles
+                    button.classList.remove('text-gray-400', 'hover:text-white');
+                    button.classList.add('bg-gold', 'text-black', 'shadow-lg');
+                } else {
+                    // Hide inactive indicator
+                    indicator.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                    indicator.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    
+                    // Reset button styles
+                    button.classList.remove('bg-gold', 'text-black', 'shadow-lg');
+                    button.classList.add('text-gray-400', 'hover:text-white');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
