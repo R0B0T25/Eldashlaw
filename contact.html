@@ -11,7 +11,7 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#000000', gold: '#fcb900', light: '#f5f5f5', 'dark-alt': '#1a1a1a',
+                        dark: '#080808', gold: '#C3A552', light: '#f5f5f5', 'dark-alt': '#1a1a1a',
                     },
                     fontFamily: {
                         heading: ['Cabin', 'Georgia', 'serif'], body: ['Cabin', 'Georgia', 'serif'], serif: ['Georgia', 'serif'],
@@ -24,25 +24,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        body { background-color: #000000; color: #f5f5f5; overflow-x: hidden; font-family: 'Cabin', Georgia, serif; margin: 0; cursor: none; }
+        body { background-color: #080808; color: #f5f5f5; overflow-x: hidden; font-family: 'Cabin', Georgia, serif; margin: 0; cursor: none; }
         @media (hover: none) and (pointer: coarse) { body { cursor: auto; } .cursor-dot, .cursor-outline { display: none !important; } }
         .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; pointer-events: none; }
-        .cursor-dot { width: 8px; height: 8px; background-color: #fcb900; }
+        .cursor-dot { width: 8px; height: 8px; background-color: #C3A552; }
         .cursor-outline { width: 40px; height: 40px; border: 1px solid rgba(252, 185, 0, 0.5); transition: width 0.2s, height 0.2s, background-color 0.2s; }
         .cursor-hover .cursor-outline { width: 80px; height: 80px; background-color: rgba(252, 185, 0, 0.1); border-color: transparent; mix-blend-mode: difference; }
-        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #000000; } ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; } ::-webkit-scrollbar-thumb:hover { background: #fcb900; }
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #080808; } ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; } ::-webkit-scrollbar-thumb:hover { background: #C3A552; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Cabin', Georgia, serif; text-transform: uppercase; }
         
         .huge-text { font-size: clamp(3rem, 10vw, 10rem); line-height: 0.85; margin: 0; letter-spacing: -0.02em; }
-        .outline-text { color: #fcb900; -webkit-text-stroke: none; }
+        .outline-text { color: #C3A552; -webkit-text-stroke: none; }
         .page-header { padding-top: 150px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         
         /* Form Styling */
         .glass-input { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; color: white; width: 100%; padding: 1.2rem 1.5rem; font-family: 'Cabin', Georgia, serif; font-size: 1.1rem; transition: all 0.3s; }
-        .glass-input:focus { outline: none; border-color: #fcb900; background: rgba(255, 255, 255, 0.05); box-shadow: 0 0 20px rgba(252, 185, 0, 0.1); }
+        .glass-input:focus { outline: none; border-color: #C3A552; background: rgba(255, 255, 255, 0.05); box-shadow: 0 0 20px rgba(252, 185, 0, 0.1); }
         ::placeholder { color: rgba(255,255,255,0.4); }
         
-        .btn-submit { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #fcb900; color: #000000; padding: 1.2rem 3rem; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Cabin', Georgia, serif; font-size: 1.1rem; font-weight: bold; transition: all 0.4s; border-radius: 4px; cursor: none; width: 100%; }
+        .btn-submit { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #C3A552; color: #080808; padding: 1.2rem 3rem; text-transform: uppercase; letter-spacing: 0.15em; font-family: 'Cabin', Georgia, serif; font-size: 1.1rem; font-weight: bold; transition: all 0.4s; border-radius: 4px; cursor: none; width: 100%; }
         .btn-submit:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(252, 185, 0, 0.3); }
 
         .office-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 2.5rem; border-radius: 8px; transition: all 0.5s; height: 100%; display: flex; flex-direction: column; }
